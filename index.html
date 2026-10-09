@@ -1,0 +1,475 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>DuyLV — Lead Unity Developer</title>
+<meta name="description" content="DuyLV — Lead Unity Developer. 12 mobile games shipped on Google Play, 350K+ downloads. Gameplay, monetization SDK, Editor tooling, playable ads and AI-assisted workflow.">
+<meta property="og:title" content="DuyLV — Lead Unity Developer">
+<meta property="og:description" content="12 mobile games shipped · 350K+ downloads · Ads/IAP/Analytics SDK author · Editor tooling · Playable ads · AI-assisted Unity workflow">
+<meta property="og:type" content="profile">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#0b0e14; --bg2:#11161f; --card:#151b26; --line:#232c3b;
+  --text:#e6ebf2; --muted:#93a0b4; --accent:#3ee0b0; --accent2:#7aa7ff; --warn:#ffcc66;
+  --chip:#1b2331; --shadow:0 10px 30px rgba(0,0,0,.35);
+}
+:root[data-theme="light"]{
+  --bg:#f6f8fb; --bg2:#ffffff; --card:#ffffff; --line:#e3e8ef;
+  --text:#121826; --muted:#5b6678; --accent:#0a9f78; --accent2:#2f6fe0; --warn:#b7791f;
+  --chip:#eef2f7; --shadow:0 8px 24px rgba(20,30,50,.08);
+}
+@media (prefers-color-scheme: light){
+  :root:not([data-theme="dark"]){
+    --bg:#f6f8fb; --bg2:#ffffff; --card:#ffffff; --line:#e3e8ef;
+    --text:#121826; --muted:#5b6678; --accent:#0a9f78; --accent2:#2f6fe0; --warn:#b7791f;
+    --chip:#eef2f7; --shadow:0 8px 24px rgba(20,30,50,.08);
+  }
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--text);font:16px/1.6 Inter,system-ui,-apple-system,Segoe UI,Roboto,sans-serif;-webkit-font-smoothing:antialiased}
+a{color:var(--accent2);text-decoration:none}
+a:hover{text-decoration:underline}
+.wrap{max-width:1080px;margin:0 auto;padding:0 16px}
+body[data-lang="en"] [lang="vi"], body[data-lang="vi"] [lang="en"]{display:none!important}
+
+/* nav */
+nav{position:sticky;top:0;z-index:10;background:color-mix(in srgb,var(--bg) 85%,transparent);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+nav .wrap{display:flex;align-items:center;gap:16px;height:56px}
+.logo{font-weight:800;letter-spacing:-.02em;color:var(--text)}
+.logo b{color:var(--accent)}
+.links{display:flex;gap:18px;margin-left:auto;font-size:14px}
+.links a{color:var(--muted)}
+.links a:hover{color:var(--text);text-decoration:none}
+.tog{display:flex;gap:6px}
+.tog button{background:var(--chip);color:var(--text);border:1px solid var(--line);border-radius:8px;padding:5px 10px;font:600 13px Inter,sans-serif;cursor:pointer}
+.tog button:hover{border-color:var(--accent)}
+@media (max-width:760px){.links{display:none}.tog{margin-left:auto}}
+
+/* hero */
+header{padding:72px 0 40px}
+.kicker{font:500 13px "JetBrains Mono",monospace;color:var(--accent);letter-spacing:.04em}
+h1{font-size:clamp(36px,6vw,60px);line-height:1.05;margin:10px 0 14px;letter-spacing:-.03em}
+h1 span.g{background:linear-gradient(90deg,var(--accent),var(--accent2));-webkit-background-clip:text;background-clip:text;color:transparent}
+.lead{font-size:clamp(17px,2.2vw,20px);color:var(--muted);max-width:760px}
+.cta{display:flex;flex-wrap:wrap;gap:10px;margin-top:24px}
+.btn{display:inline-flex;align-items:center;gap:8px;padding:10px 16px;border-radius:10px;font-weight:600;font-size:15px;border:1px solid var(--line);background:var(--card);color:var(--text);cursor:pointer}
+.btn.p{background:var(--accent);color:#06281f;border-color:transparent}
+.btn:hover{text-decoration:none;transform:translateY(-1px)}
+.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-top:40px}
+.stat{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:18px}
+.stat .n{font-size:30px;font-weight:800;letter-spacing:-.02em}
+.stat .n em{font-style:normal;color:var(--accent)}
+.stat .l{color:var(--muted);font-size:14px}
+@media (max-width:760px){.stats{grid-template-columns:repeat(2,1fr)}}
+
+/* sections */
+section{padding:48px 0;border-top:1px solid var(--line)}
+h2{font-size:28px;letter-spacing:-.02em;margin:0 0 6px}
+.sub{color:var(--muted);margin:0 0 28px}
+.grid{display:grid;gap:16px}
+.g3{grid-template-columns:repeat(3,1fr)}
+.g2{grid-template-columns:repeat(2,1fr)}
+@media (max-width:900px){.g3{grid-template-columns:1fr 1fr}}
+@media (max-width:640px){.g3,.g2{grid-template-columns:1fr}}
+.card{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:20px;box-shadow:var(--shadow)}
+.card h3{margin:0 0 6px;font-size:18px}
+.card p{margin:0;color:var(--muted);font-size:15px}
+.ico{font-size:22px;width:42px;height:42px;display:grid;place-items:center;border-radius:12px;background:var(--chip);margin-bottom:12px}
+
+/* games */
+.game{display:flex;flex-direction:column;gap:12px}
+.ghead{display:flex;gap:14px;align-items:center}
+.ghead img{width:64px;height:64px;border-radius:16px;flex:none;background:var(--chip)}
+.ghead h3{margin:0;font-size:17px;line-height:1.25}
+.meta{font-size:13px;color:var(--muted)}
+.badges{display:flex;flex-wrap:wrap;gap:6px}
+.b{font-size:12px;font-weight:600;padding:3px 8px;border-radius:999px;background:var(--chip);color:var(--muted);border:1px solid var(--line)}
+.b.dl{color:var(--accent);border-color:color-mix(in srgb,var(--accent) 40%,var(--line))}
+.b.st{color:var(--warn)}
+.game ul{margin:0;padding-left:18px;color:var(--muted);font-size:14px}
+.game ul li{margin:2px 0}
+.game .foot{margin-top:auto;font-size:14px}
+.feat{grid-column:span 3}
+@media (max-width:900px){.feat{grid-column:span 2}}
+@media (max-width:640px){.feat{grid-column:span 1}}
+.feat .inner{display:grid;grid-template-columns:1.1fr 1fr;gap:20px}
+@media (max-width:760px){.feat .inner{grid-template-columns:1fr}}
+.mini{display:flex;gap:10px;align-items:center;padding:12px;border:1px solid var(--line);border-radius:12px;background:var(--card)}
+.mini img{width:44px;height:44px;border-radius:11px}
+.mini .t{font-weight:600;font-size:14px;line-height:1.2}
+
+/* tools */
+.tool code,.mono{font:500 12.5px "JetBrains Mono",monospace;color:var(--accent)}
+.tool .tags{margin-top:12px}
+
+/* skills */
+.sk h3{font-size:15px;text-transform:uppercase;letter-spacing:.06em;color:var(--accent);margin:0 0 10px}
+.chips{display:flex;flex-wrap:wrap;gap:6px}
+.chip{font-size:13px;padding:4px 10px;border-radius:8px;background:var(--chip);border:1px solid var(--line)}
+
+/* timeline */
+.tl{border-left:2px solid var(--line);margin-left:6px;padding-left:22px}
+.tl .it{position:relative;margin-bottom:26px}
+.tl .it:before{content:"";position:absolute;left:-29px;top:6px;width:12px;height:12px;border-radius:50%;background:var(--accent);box-shadow:0 0 0 4px var(--bg)}
+.tl h3{margin:0;font-size:17px}
+.tl .when{font:500 13px "JetBrains Mono",monospace;color:var(--muted)}
+.tl ul{color:var(--muted);margin:8px 0 0;padding-left:18px}
+
+footer{padding:48px 0 64px;border-top:1px solid var(--line)}
+.contact{display:flex;flex-wrap:wrap;gap:10px;margin-top:16px}
+
+/* print = 1 CV PDF */
+@media print{
+  :root{--bg:#fff;--bg2:#fff;--card:#fff;--line:#ddd;--text:#111;--muted:#444;--accent:#0a7f60;--accent2:#1e4fb8;--chip:#f2f2f2;--shadow:none}
+  nav,.cta,.noprint{display:none!important}
+  body{font-size:11pt}
+  header{padding:0 0 10px}
+  section{padding:14px 0;break-inside:auto}
+  .card{break-inside:avoid;padding:12px}
+  .stats{grid-template-columns:repeat(4,1fr)}
+  .g3{grid-template-columns:1fr 1fr}
+  a{color:inherit}
+}
+</style>
+</head>
+<body data-lang="en">
+
+<nav>
+  <div class="wrap">
+    <a class="logo" href="#top">Duy<b>LV</b></a>
+    <div class="links">
+      <a href="#strengths"><span lang="en">Strengths</span><span lang="vi">Thế mạnh</span></a>
+      <a href="#games"><span lang="en">Games</span><span lang="vi">Game</span></a>
+      <a href="#tools"><span lang="en">Tools</span><span lang="vi">Công cụ</span></a>
+      <a href="#skills"><span lang="en">Skills</span><span lang="vi">Kỹ năng</span></a>
+      <a href="#experience"><span lang="en">Experience</span><span lang="vi">Kinh nghiệm</span></a>
+      <a href="#contact"><span lang="en">Contact</span><span lang="vi">Liên hệ</span></a>
+    </div>
+    <div class="tog">
+      <button id="langBtn" aria-label="Switch language">VI</button>
+      <button id="themeBtn" aria-label="Toggle theme">◐</button>
+    </div>
+  </div>
+</nav>
+
+<header id="top">
+  <div class="wrap">
+    <div class="kicker">// LEAD UNITY DEVELOPER · MOBILE GAMES</div>
+    <h1>DuyLV — <span class="g" lang="en">I lead teams that ship games.</span><span class="g" lang="vi">Dẫn dắt team đưa game lên store.</span></h1>
+    <p class="lead" lang="en">Lead Unity developer at GameUp.Studio / Ohze Games. I direct projects from prototype to Google Play — gameplay architecture, monetization (ads, IAP, analytics), release pipeline — and I build the framework, SDK and Editor tooling the whole studio runs on.</p>
+    <p class="lead" lang="vi">Lead Unity Developer tại GameUp.Studio / Ohze Games. Trực tiếp chỉ đạo dự án từ prototype tới khi lên Google Play — kiến trúc gameplay, monetization (ads, IAP, analytics), quy trình release — và tự xây framework, SDK, Editor tool mà cả studio đang dùng.</p>
+    <div class="cta">
+      <a class="btn p" href="#games"><span lang="en">See shipped games</span><span lang="vi">Xem game đã phát hành</span></a>
+      <a class="btn" href="https://github.com/gounldyu119" target="_blank" rel="noopener">GitHub ↗</a>
+      <a class="btn" href="mailto:luongduy070211@gmail.com">✉ Email</a>
+      <button class="btn" onclick="window.print()"><span lang="en">⬇ Save as PDF CV</span><span lang="vi">⬇ Lưu CV dạng PDF</span></button>
+    </div>
+    <div class="stats">
+      <div class="stat"><div class="n"><em>12</em></div><div class="l" lang="en">games live on Google Play</div><div class="l" lang="vi">game đang chạy trên Google Play</div></div>
+      <div class="stat"><div class="n"><em>350K+</em></div><div class="l" lang="en">total downloads</div><div class="l" lang="vi">tổng lượt tải</div></div>
+      <div class="stat"><div class="n"><em>2,400+</em></div><div class="l" lang="en">commits across 14 studio repos</div><div class="l" lang="vi">commit trên 14 repo của studio</div></div>
+      <div class="stat"><div class="n"><em>3</em></div><div class="l" lang="en">open-source Unity packages (~23K LOC)</div><div class="l" lang="vi">package Unity mã nguồn mở (~23K dòng)</div></div>
+    </div>
+  </div>
+</header>
+
+<section id="strengths">
+  <div class="wrap">
+    <h2 lang="en">What sets me apart</h2><h2 lang="vi">Điểm khác biệt</h2>
+    <p class="sub" lang="en">Beyond writing gameplay code — the parts of shipping a mobile game most Unity developers never own.</p>
+    <p class="sub" lang="vi">Không chỉ viết gameplay — mà là những phần của việc ship một game mobile mà phần lớn Unity dev chưa từng đảm nhận.</p>
+    <div class="grid g3">
+      <div class="card"><div class="ico">🧭</div>
+        <h3 lang="en">Lead across a portfolio</h3><h3 lang="vi">Lead nhiều dự án song song</h3>
+        <p lang="en">Directs development on every studio title: sets architecture and conventions, reviews code, unblocks the team, and owns the path to release.</p>
+        <p lang="vi">Chỉ đạo phát triển toàn bộ game của studio: đặt kiến trúc và quy ước, review code, gỡ vướng cho team, chịu trách nhiệm tới khi release.</p></div>
+      <div class="card"><div class="ico">💰</div>
+        <h3 lang="en">Monetization &amp; LiveOps</h3><h3 lang="vi">Monetization &amp; LiveOps</h3>
+        <p lang="en">Author of the studio SDK: multi-mediation ads (AdMob, AppLovin MAX, LevelPlay), IAP with receipt validation, Remote Config, MMP (AppsFlyer/Adjust), ATT/GDPR consent. Integrates publisher SDKs (Homa, ABI).</p>
+        <p lang="vi">Tác giả SDK của studio: ads đa mediation (AdMob, AppLovin MAX, LevelPlay), IAP kiểm chữ ký receipt, Remote Config, MMP (AppsFlyer/Adjust), consent ATT/GDPR. Tích hợp SDK publisher (Homa, ABI).</p></div>
+      <div class="card"><div class="ico">🧱</div>
+        <h3 lang="en">Framework builder</h3><h3 lang="vi">Xây framework cho studio</h3>
+        <p lang="en">Created GameUp Core — singleton, signal bus, pooling, encrypted save with migrations, audio, Addressables-based Screen/Popup UI, one-click project installer — used as the base for new studio games.</p>
+        <p lang="vi">Tạo GameUp Core — singleton, signal bus, pooling, save mã hoá có migration, audio, UI Screen/Popup trên Addressables, installer một nút — làm nền cho các game mới của studio.</p></div>
+      <div class="card"><div class="ico">🛠️</div>
+        <h3 lang="en">Editor tooling for designers</h3><h3 lang="vi">Editor tool cho designer</h3>
+        <p lang="en">Enemy editors, unit-combat editors, stat/data editing windows, ad-config tabs — designers tune balance without touching code.</p>
+        <p lang="vi">Enemy editor, unit-combat editor, cửa sổ chỉnh stat/data, tab cấu hình ads — designer cân bằng game mà không cần đụng code.</p></div>
+      <div class="card"><div class="ico">🎬</div>
+        <h3 lang="en">Playable ads / UA creatives</h3><h3 lang="vi">Playable ads / creative UA</h3>
+        <p lang="en">Built Luna Playable Packer: packs Luna Playworks builds offline for 8 ad networks, and makes Luna run on Linux where it isn't officially supported.</p>
+        <p lang="vi">Xây Luna Playable Packer: đóng gói build Luna Playworks offline cho 8 ad network, và chạy được Luna trên Linux — nơi Luna không hỗ trợ chính thức.</p></div>
+      <div class="card"><div class="ico">🤖</div>
+        <h3 lang="en">AI-accelerated team workflow</h3><h3 lang="vi">Quy trình team tăng tốc bằng AI</h3>
+        <p lang="en">Rolled out Claude Code / Cursor with Unity MCP across studio projects: shared CLAUDE.md conventions, auto-generated API indexes, safety hooks, AI-assisted level production.</p>
+        <p lang="vi">Triển khai Claude Code / Cursor + Unity MCP cho các dự án studio: bộ quy ước CLAUDE.md chung, API index tự sinh, hook an toàn, sản xuất level có AI hỗ trợ.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="games">
+  <div class="wrap">
+    <h2 lang="en">Shipped games</h2><h2 lang="vi">Game đã phát hành</h2>
+    <p class="sub" lang="en">All titles below were developed under my lead. Download counts and ratings from Google Play (Oct 2026).</p>
+    <p class="sub" lang="vi">Tất cả game dưới đây được phát triển dưới sự chỉ đạo của tôi. Lượt tải và đánh giá lấy từ Google Play (10/2026).</p>
+
+    <div class="grid g3">
+
+      <div class="card game feat"><div class="inner">
+        <div>
+          <div class="ghead">
+            <img src="https://play-lh.googleusercontent.com/tt_dRII-5ZHeFWnCV-E2gn_wPlucn3hP8LbRSp7YTBpKNbtmziTish3t95A-EmPQN3l3UfxViDn2aChKtm1jrTw=s128" alt="Backpack Attack icon" loading="lazy">
+            <div><h3>Backpack Attack</h3><div class="meta">Published by ABI Games · Unity 6</div></div>
+          </div>
+          <div class="badges" style="margin-top:12px"><span class="b dl">100K+ downloads</span><span class="b st">★ 4.4</span><span class="b">Lead Dev</span><span class="b">2024 → 2026</span></div>
+          <p style="margin-top:12px" lang="en">Backpack merge-battler built end-to-end over two years and released through publisher ABI Games — 1,000+ commits on the repo.</p>
+          <p style="margin-top:12px" lang="vi">Game merge-battle balo phát triển trọn vòng đời trong 2 năm, phát hành qua publisher ABI Games — hơn 1.000 commit.</p>
+        </div>
+        <div>
+          <ul lang="en">
+            <li>Battle core: hero spawning, weapon merge &amp; block placement, ranged/special attacks, buffs, poison/shield VFX</li>
+            <li>Meta: equipment gacha, upgrades, boss duel with ranking, battle pass, daily rewards, lucky wheel, gem shop</li>
+            <li>Monetization: IAP, remove-ads, rewarded placements, force update</li>
+            <li>iOS release pipeline with fastlane (TestFlight/App Store); playable ads with Luna</li>
+          </ul>
+          <ul lang="vi">
+            <li>Core battle: spawn hero, merge vũ khí &amp; xếp block, tấn công xa/đặc biệt, buff, VFX độc/khiên</li>
+            <li>Meta: gacha trang bị, nâng cấp, boss duel có bảng xếp hạng, battle pass, quà hằng ngày, vòng quay, shop gem</li>
+            <li>Monetization: IAP, remove ads, các điểm rewarded, force update</li>
+            <li>Pipeline release iOS bằng fastlane (TestFlight/App Store); playable ads bằng Luna</li>
+          </ul>
+          <div class="foot" style="margin-top:12px"><a href="https://play.google.com/store/apps/details?id=com.abi.backpack.attack" target="_blank" rel="noopener">Google Play ↗</a></div>
+        </div>
+      </div></div>
+
+      <div class="card game">
+        <div class="ghead"><img src="https://play-lh.googleusercontent.com/cHA9PbUX4FU48bYtPuB2yCc9Mme830FfifJP2Jr21UMA_FFRasbmJiT2s8s_GSONC4dxyXlogNwPO0wGnJkoxW4=s128" alt="" loading="lazy">
+          <div><h3>Steal Master: Thief Simulator</h3><div class="meta">GameUp.Studio · Unity 6 · 3D</div></div></div>
+        <div class="badges"><span class="b dl">100K+</span><span class="b st">★ 4.2</span><span class="b">Lead Dev</span></div>
+        <ul lang="en"><li>3D stealth simulation; studio SDK &amp; analytics integration</li><li>AI-assisted level production pipeline with written level-request guide</li></ul>
+        <ul lang="vi"><li>Mô phỏng trộm 3D; tích hợp SDK &amp; analytics của studio</li><li>Quy trình làm level có AI hỗ trợ, kèm tài liệu yêu cầu level</li></ul>
+        <div class="foot"><a href="https://play.google.com/store/apps/details?id=com.gu.thiefsimulator.heist.games" target="_blank" rel="noopener">Google Play ↗</a></div>
+      </div>
+
+      <div class="card game">
+        <div class="ghead"><img src="https://play-lh.googleusercontent.com/Dq0dQaYxz3NyQRXquz3iOlKS5cmUZHcRhGMW_l6-JFvwwib8T5RWCbseinvfFvBOp8TNuFdf9tkfPUYAnblJJ5k=s128" alt="" loading="lazy">
+          <div><h3>BBQ Sort: Grill Match</h3><div class="meta">Ohze Games · Unity 2022.3 · Puzzle</div></div></div>
+        <div class="badges"><span class="b dl">100K+</span><span class="b st">★ 4.6</span><span class="b">Lead Dev</span></div>
+        <ul lang="en"><li>Casual sort/match puzzle with live monetization</li><li>Maintained release compliance (Android API 36 target)</li></ul>
+        <ul lang="vi"><li>Puzzle sort/match casual, đang vận hành monetization</li><li>Duy trì tuân thủ store (target Android API 36)</li></ul>
+        <div class="foot"><a href="https://play.google.com/store/apps/details?id=com.ohze.bbq.sort" target="_blank" rel="noopener">Google Play ↗</a></div>
+      </div>
+
+      <div class="card game">
+        <div class="ghead"><img src="https://play-lh.googleusercontent.com/31l4w7ixH6w97R_wZJywnHuovaaE13U7pnbI65UNax-t39HXQtLBRJUbSuYxTP8Vqh6sOp_oxGx4rFLzp96X=s128" alt="" loading="lazy">
+          <div><h3>Giant Beatdown: Fight Arena</h3><div class="meta">GameUp.Studio · URP · Cinemachine</div></div></div>
+        <div class="badges"><span class="b dl">10K+</span><span class="b st">★ 4.6</span><span class="b">Lead Dev</span></div>
+        <ul lang="en"><li>Arena mode: bot profiles, matchmaking, best-of-3 flow, match history</li><li>Relics, boss skills, rewarded-ad rules, IAP, Pangle mediation</li></ul>
+        <ul lang="vi"><li>Chế độ Arena: bot profile, matchmaking, luồng BO3, lịch sử trận</li><li>Relic, skill boss, luật rewarded ads, IAP, mediation Pangle</li></ul>
+        <div class="foot"><a href="https://play.google.com/store/apps/details?id=com.gu.many.guys.arena" target="_blank" rel="noopener">Google Play ↗</a></div>
+      </div>
+
+      <div class="card game">
+        <div class="ghead"><img src="https://play-lh.googleusercontent.com/xKIOC_opf7wi7-LhRMbzYBRBKA7iDUvQljkHUzNQIbvo_6ZVblgXicgIyToJ_Yt19v__sAVAZ4TsSKr6xl3Y=s128" alt="" loading="lazy">
+          <div><h3>Shoot the Dead</h3><div class="meta">GameUp.Studio · Unity 6 · Shooter</div></div></div>
+        <div class="badges"><span class="b dl">10K+</span><span class="b st">★ 4.2</span><span class="b">Lead Dev</span></div>
+        <ul lang="en"><li>Headshot multipliers per body part, bleed damage, recoil kick, aim-hold while reloading</li><li>App-open ads by launch count, Adjust MMP, automated tests</li></ul>
+        <ul lang="vi"><li>Hệ số headshot theo bộ phận, sát thương chảy máu, giật súng, giữ ngắm khi nạp đạn</li><li>App-open ad theo số lần mở app, MMP Adjust, test tự động</li></ul>
+        <div class="foot"><a href="https://play.google.com/store/apps/details?id=com.gu013.shoot.the.dead" target="_blank" rel="noopener">Google Play ↗</a></div>
+      </div>
+
+      <div class="card game">
+        <div class="ghead"><img src="https://play-lh.googleusercontent.com/U4jf47xtCi1AIRnhWPSLXTOsto5tUVO0A1cCB9aHiSyWymuuEjwg5oETktUmAW6zVthEyT5WvapA4OhYJ51QtQ=s128" alt="" loading="lazy">
+          <div><h3>Gun Sound: Bang Bang</h3><div class="meta">GameUp.Studio · Simulator</div></div></div>
+        <div class="badges"><span class="b dl">10K+</span><span class="b st">★ 4.2</span><span class="b">Lead Dev</span></div>
+        <ul lang="en"><li>Weapon sound simulator on the studio SDK + GameUp Core</li><li>Android release build setup</li></ul>
+        <ul lang="vi"><li>Mô phỏng âm thanh súng, chạy trên SDK studio + GameUp Core</li><li>Thiết lập build release Android</li></ul>
+        <div class="foot"><a href="https://play.google.com/store/apps/details?id=com.gu011.gun.sound.bang" target="_blank" rel="noopener">Google Play ↗</a></div>
+      </div>
+
+      <div class="card game">
+        <div class="ghead"><img src="https://play-lh.googleusercontent.com/KnL58f4F20zF6Lg6Oc5D4xU1ndOcBk0hh-iwGX1h7-WjZqfN5Na6xy1rz3ExRHyPWozmbazJORhPEzUkgnJOsy0=s128" alt="" loading="lazy">
+          <div><h3>Backpack Tower Defense</h3><div class="meta">GameUp.Studio · Unity 6</div></div></div>
+        <div class="badges"><span class="b dl">10K+</span><span class="b">Lead Dev</span></div>
+        <ul lang="en"><li>Reference game for the GameUp SDK: multi-ID ad placements, collapsible banners, consent flow</li></ul>
+        <ul lang="vi"><li>Game tham chiếu cho GameUp SDK: ad multi-ID theo placement, collapsible banner, luồng consent</li></ul>
+        <div class="foot"><a href="https://play.google.com/store/apps/details?id=com.gu.backpack.towerdefense" target="_blank" rel="noopener">Google Play ↗</a></div>
+      </div>
+
+      <div class="card game">
+        <div class="ghead"><img src="https://play-lh.googleusercontent.com/L4pEcDAn2bhlqqY0ywZrjA_bccl7YtEqK3mLG-KiQnyABMNP9b3n1N_byuZYdqATIO6QqHaw22KcsibojVEG=s128" alt="" loading="lazy">
+          <div><h3>Dungeon Architect: Rogue RPG</h3><div class="meta">GameUp.Studio · Unity 6</div></div></div>
+        <div class="badges"><span class="b dl">5K+</span><span class="b">Lead Dev</span></div>
+        <ul lang="en"><li>Roguelike RPG; Editor tools for unit stats, camp data and perk popups</li></ul>
+        <ul lang="vi"><li>Roguelike RPG; Editor tool chỉnh stat unit, data camp và perk popup</li></ul>
+        <div class="foot"><a href="https://play.google.com/store/apps/details?id=com.gu003.rogue.dungeonmaster" target="_blank" rel="noopener">Google Play ↗</a></div>
+      </div>
+
+      <div class="card game">
+        <div class="ghead"><img src="https://play-lh.googleusercontent.com/8NXOhnPKZa1JzcVKtRVOwkCw2PZEEpyVzUTGV1Mk3av76he7H0knrk5hO38SuVeci5yBeD5rSgVFsZmDbTqS1A=s128" alt="" loading="lazy">
+          <div><h3>Gear Strike</h3><div class="meta">Ohze Games · Unity 2022.3 · Homa SDK</div></div></div>
+        <div class="badges"><span class="b dl">5K+</span><span class="b">Lead Dev</span></div>
+        <ul lang="en"><li>Gear/screw combat with waves, AoE skills, unit upgrades, blessings</li><li>Missions, daily quests &amp; login, tutorial, push notifications; Homa + Adjust + GameAnalytics</li></ul>
+        <ul lang="vi"><li>Chiến đấu bánh răng/ốc vít theo wave, skill AoE, nâng cấp unit, blessing</li><li>Nhiệm vụ, daily quest &amp; login, tutorial, push notification; Homa + Adjust + GameAnalytics</li></ul>
+        <div class="foot"><a href="https://play.google.com/store/apps/details?id=com.ohze.gear.strike" target="_blank" rel="noopener">Google Play ↗</a></div>
+      </div>
+
+      <div class="card game">
+        <div class="ghead"><img src="https://play-lh.googleusercontent.com/4D9jbD8pErpp3EQRI9BN0uqY1sllVD5dIGRChpURrSfpRENf57WWL3Z_50-KgwqiWz-K1uexOHLXLTa6guhzTg=s128" alt="" loading="lazy">
+          <div><h3>Fight Me! Crazy Guys Clash</h3><div class="meta">GameUp.Studio · Unity 6 · Spine 2D</div></div></div>
+        <div class="badges"><span class="b dl">1K+</span><span class="b st">★ 4.2</span><span class="b">Lead Dev</span></div>
+        <ul lang="en"><li>Auto-battler with unique unit kits (Werewolf day/night cycle, Human Shield, planted bombs)</li><li>Rarity &amp; combat power, pooled VFX system, unit-combat editor, IAP shop, battle analytics</li></ul>
+        <ul lang="vi"><li>Auto-battler với bộ skill riêng từng unit (Người sói chu kỳ ngày/đêm, Lá chắn người, bom cài)</li><li>Độ hiếm &amp; lực chiến, hệ VFX pooling, editor combat unit, shop IAP, analytics trận đấu</li></ul>
+        <div class="foot"><a href="https://play.google.com/store/apps/details?id=com.gu012.autobattle.imagefight" target="_blank" rel="noopener">Google Play ↗</a></div>
+      </div>
+
+      <div class="card game">
+        <div class="ghead"><img src="https://play-lh.googleusercontent.com/wh78cuXLiO3f7clipOJV7Os-3PHcaFjHaEdD6v-WBvJzRoPguhMn1Zgl8Erc9W-89XNTelkHD3boNQFq_KOsNQ=s128" alt="" loading="lazy">
+          <div><h3>Double Troops</h3><div class="meta">GameUp.Studio · Unity 6 · 3D</div></div></div>
+        <div class="badges"><span class="b dl">1K+</span><span class="b st">★ 4.2</span><span class="b">Lead Dev</span></div>
+        <ul lang="en"><li>3D army battler built on GameUp Core + SDK</li></ul>
+        <ul lang="vi"><li>Game đội quân 3D, xây trên GameUp Core + SDK</li></ul>
+        <div class="foot"><a href="https://play.google.com/store/apps/details?id=com.gu009.doublestickman3d" target="_blank" rel="noopener">Google Play ↗</a></div>
+      </div>
+
+      <div class="card game">
+        <div class="ghead"><img src="https://play-lh.googleusercontent.com/Lnx1XxjVe4c0PBntXE31onP9PiN5ZGCAo9kuWh-fhfFlfQOftp0O5c13HynXwla_7k6MvvGZUMdNvjnffYkl0g=s128" alt="" loading="lazy">
+          <div><h3>Packventure: Loot &amp; Slash</h3><div class="meta">GameUp.Studio · URP · Cinemachine</div></div></div>
+        <div class="badges"><span class="b dl">New</span><span class="b">Lead Dev</span></div>
+        <ul lang="en"><li>Backpack RPG: shaped grid inventory with carry weight, set bonuses, consumables</li><li>Parry &amp; phase-shifting enemy attacks, merchant/risk-reward events, custom Enemy Editor</li></ul>
+        <ul lang="vi"><li>Backpack RPG: túi đồ dạng lưới theo hình item, giới hạn trọng lượng, set bonus, đồ tiêu hao</li><li>Parry &amp; đòn đánh đổi pha của quái, sự kiện thương nhân/risk-reward, Enemy Editor riêng</li></ul>
+        <div class="foot"><a href="https://play.google.com/store/apps/details?id=com.gu007.packventure.backpackrpg" target="_blank" rel="noopener">Google Play ↗</a></div>
+      </div>
+
+    </div>
+    <p class="sub" style="margin-top:20px" lang="en">Also in development: <b>Age Rush: Evolution War</b> (Spine 2D, lane battler). Full catalogue: <a href="https://play.google.com/store/apps/developer?id=GameUp.Studio" target="_blank" rel="noopener">GameUp.Studio</a> · <a href="https://play.google.com/store/apps/dev?id=5245554350226476958" target="_blank" rel="noopener">Ohze Games</a>.</p>
+    <p class="sub" style="margin-top:20px" lang="vi">Đang phát triển: <b>Age Rush: Evolution War</b> (Spine 2D, lane battler). Toàn bộ danh mục: <a href="https://play.google.com/store/apps/developer?id=GameUp.Studio" target="_blank" rel="noopener">GameUp.Studio</a> · <a href="https://play.google.com/store/apps/dev?id=5245554350226476958" target="_blank" rel="noopener">Ohze Games</a>.</p>
+  </div>
+</section>
+
+<section id="tools">
+  <div class="wrap">
+    <h2 lang="en">Tools &amp; frameworks I built</h2><h2 lang="vi">Công cụ &amp; framework tự xây</h2>
+    <p class="sub" lang="en">Installable as Unity packages via Git URL. These are what make a studio ship faster than its headcount.</p>
+    <p class="sub" lang="vi">Cài được qua Git URL như package Unity. Đây là thứ giúp studio ship nhanh hơn quy mô nhân sự.</p>
+    <div class="grid g2">
+      <div class="card tool">
+        <h3>Gounldyu Game SDK</h3><code>com.gounldyu.game-sdk · v1.0.0 · Unity 6</code>
+        <p style="margin-top:10px" lang="en">All-in-one monetization package: AdMob / AppLovin MAX / LevelPlay (banner, interstitial, rewarded, app open, native with Android/iOS native bridges), waterfall &amp; capping, Firebase · AppsFlyer/Adjust · AppMetrica · GameAnalytics · Facebook, Remote Config, ATT/GDPR, Unity IAP v5 with receipt validation. One-click dependency installer pulling official SDK sources, auto define-symbol sync, config validator.</p>
+        <p style="margin-top:10px" lang="vi">Package monetization trọn gói: AdMob / AppLovin MAX / LevelPlay (banner, interstitial, rewarded, app open, native có bridge Android/iOS), waterfall &amp; capping, Firebase · AppsFlyer/Adjust · AppMetrica · GameAnalytics · Facebook, Remote Config, ATT/GDPR, Unity IAP v5 kiểm chữ ký receipt. Installer một nút tải SDK từ nguồn chính thức, tự đồng bộ define symbol, kiểm tra cấu hình.</p>
+        <div class="badges tags"><span class="b">~17.5K LOC C#</span><span class="b">Native Android/iOS</span><span class="b">Migration-safe</span></div>
+        <p style="margin-top:12px"><a href="https://github.com/gounldyu119/Gounldyu-Game-SDK" target="_blank" rel="noopener">github.com/gounldyu119/Gounldyu-Game-SDK ↗</a></p>
+      </div>
+      <div class="card tool">
+        <h3>Luna Playable Packer</h3><code>com.duylv.luna-playable-packer · v1.1.0</code>
+        <p style="margin-top:10px" lang="en">Editor toolkit for Luna Playworks playable ads: SDK install, environment diagnostics with one-click fixes on Windows/macOS/Linux, C# compatibility layer, and an offline packer that turns the local develop build into network-ready single HTML / ZIP for AppLovin, Unity Ads, ironSource, Mintegral, Google, Meta, TikTok and Vungle.</p>
+        <p style="margin-top:10px" lang="vi">Bộ tool Editor cho playable ads Luna Playworks: cài SDK, chẩn đoán môi trường và sửa một nút trên Windows/macOS/Linux, lớp tương thích C#, và packer offline biến bản develop thành file HTML đơn / ZIP đúng chuẩn AppLovin, Unity Ads, ironSource, Mintegral, Google, Meta, TikTok, Vungle.</p>
+        <div class="badges tags"><span class="b">8 ad networks</span><span class="b">Node.js</span><span class="b">Linux support</span></div>
+        <p style="margin-top:12px"><a href="https://github.com/gounldyu119/playable-ads-luna-build" target="_blank" rel="noopener">github.com/gounldyu119/playable-ads-luna-build ↗</a></p>
+      </div>
+      <div class="card tool">
+        <h3>Unity AI Bridge</h3><code>com.gounldyu.unity-ai-bridge · v0.1.0</code>
+        <p style="margin-top:10px" lang="en">Connects the Unity Editor to Claude Code and Cursor: one-click Unity MCP install (CLI, pipeline package, MCP registration, readiness check), official Unity skills, and team convention templates with hooks that block destructive commands.</p>
+        <p style="margin-top:10px" lang="vi">Kết nối Unity Editor với Claude Code và Cursor: cài Unity MCP một nút (CLI, package pipeline, đăng ký MCP, kiểm tra sẵn sàng), skill chính thức của Unity, và bộ template quy ước team kèm hook chặn lệnh phá huỷ.</p>
+        <div class="badges tags"><span class="b">Editor-only</span><span class="b">MCP</span><span class="b">Claude Code · Cursor</span></div>
+        <p style="margin-top:12px"><a href="https://github.com/gounldyu119/Gounldyu-Unity-AI-Bridge" target="_blank" rel="noopener">github.com/gounldyu119/Gounldyu-Unity-AI-Bridge ↗</a></p>
+      </div>
+      <div class="card tool">
+        <h3>GameUp Core Framework</h3><code>com.ohze.gameup.core · v0.8.4 · studio-internal</code>
+        <p style="margin-top:10px" lang="en">Studio foundation for Unity 6: MonoSingleton, type-safe Signals, GUPool, GULogger, audio system, encrypted versioned saves, Addressables Screen/Popup UI with DOTween transitions, one-click installer (folders, DOTween, SDK, IAP), data-save inspector, and an API index generator that feeds AI agents the exact installed API.</p>
+        <p style="margin-top:10px" lang="vi">Nền tảng của studio cho Unity 6: MonoSingleton, Signal type-safe, GUPool, GULogger, hệ audio, save mã hoá có version, UI Screen/Popup trên Addressables với transition DOTween, installer một nút (folder, DOTween, SDK, IAP), cửa sổ xem data save, và trình sinh API index để AI agent đọc đúng API đang cài.</p>
+        <div class="badges tags"><span class="b">~26K LOC</span><span class="b">Unit tests</span><span class="b">Used across studio games</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="skills">
+  <div class="wrap">
+    <h2 lang="en">Skills</h2><h2 lang="vi">Kỹ năng</h2>
+    <p class="sub" lang="en">Day-to-day stack across the projects above.</p>
+    <p class="sub" lang="vi">Stack dùng hằng ngày trong các dự án trên.</p>
+    <div class="grid g3">
+      <div class="card sk"><h3>Unity &amp; C#</h3><div class="chips">
+        <span class="chip">Unity 6 / 2022.3 LTS</span><span class="chip">C#</span><span class="chip">URP</span><span class="chip">Addressables</span><span class="chip">ScriptableObject data</span><span class="chip">Assembly definitions</span><span class="chip">UPM packages</span><span class="chip">Burst</span><span class="chip">Input System</span><span class="chip">Cinemachine</span><span class="chip">Test Framework</span></div></div>
+      <div class="card sk"><h3>Gameplay</h3><div class="chips">
+        <span class="chip">Combat &amp; skill systems</span><span class="chip">Auto-battler</span><span class="chip">Inventory / backpack grid</span><span class="chip">Wave &amp; spawn</span><span class="chip">Bots &amp; matchmaking</span><span class="chip">Progression / gacha / battle pass</span><span class="chip">Tutorial systems</span><span class="chip">Object pooling</span></div></div>
+      <div class="card sk"><h3>Art pipeline &amp; UI</h3><div class="chips">
+        <span class="chip">Spine 2D</span><span class="chip">2D Animation / PSD importer</span><span class="chip">Shader Graph</span><span class="chip">VFX &amp; UI Particle</span><span class="chip">DOTween Pro</span><span class="chip">TextMeshPro</span><span class="chip">uGUI</span></div></div>
+      <div class="card sk"><h3 lang="en">Monetization &amp; data</h3><h3 lang="vi">Monetization &amp; dữ liệu</h3><div class="chips">
+        <span class="chip">AdMob</span><span class="chip">AppLovin MAX</span><span class="chip">ironSource LevelPlay</span><span class="chip">Pangle</span><span class="chip">Unity IAP v5</span><span class="chip">Firebase Analytics / Remote Config</span><span class="chip">AppsFlyer</span><span class="chip">Adjust</span><span class="chip">AppMetrica</span><span class="chip">GameAnalytics</span><span class="chip">Facebook SDK</span><span class="chip">Homa / ABI SDK</span><span class="chip">ATT / GDPR</span></div></div>
+      <div class="card sk"><h3 lang="en">Release &amp; tooling</h3><h3 lang="vi">Release &amp; tooling</h3><div class="chips">
+        <span class="chip">Editor windows &amp; inspectors</span><span class="chip">Build processors</span><span class="chip">Android AAB / Gradle / API 36</span><span class="chip">iOS / Xcode post-process</span><span class="chip">fastlane</span><span class="chip">Luna Playworks</span><span class="chip">Git / LFS</span><span class="chip">Node.js / Bash</span></div></div>
+      <div class="card sk"><h3 lang="en">Leadership &amp; AI</h3><h3 lang="vi">Lãnh đạo &amp; AI</h3><div class="chips">
+        <span class="chip" lang="en">Technical direction</span><span class="chip" lang="vi">Định hướng kỹ thuật</span>
+        <span class="chip" lang="en">Code review</span><span class="chip" lang="vi">Review code</span>
+        <span class="chip" lang="en">Coding conventions</span><span class="chip" lang="vi">Quy ước code</span>
+        <span class="chip" lang="en">Task planning</span><span class="chip" lang="vi">Lập kế hoạch task</span>
+        <span class="chip">Claude Code</span><span class="chip">Cursor</span><span class="chip">Unity MCP</span></div></div>
+    </div>
+  </div>
+</section>
+
+<section id="experience">
+  <div class="wrap">
+    <h2 lang="en">Experience</h2><h2 lang="vi">Kinh nghiệm</h2>
+    <p class="sub"></p>
+    <div class="tl">
+      <div class="it">
+        <h3>Lead Unity Developer — GameUp.Studio / Ohze Games</h3>
+        <div class="when">2024 — <span lang="en">Present</span><span lang="vi">Hiện tại</span></div>
+        <ul lang="en">
+          <li>Lead development across the studio portfolio: 12 games live on Google Play, 350K+ downloads, including three titles above 100K.</li>
+          <li>Set technical direction, coding conventions and code review for the team; directly steer each project from prototype to store release.</li>
+          <li>Built the studio's shared stack — GameUp Core framework, GameUp/Gounldyu SDK, IAP module — cutting new-project setup down to a one-click installer.</li>
+          <li>Owned release engineering: Android target-API upgrades, AAB signing, iOS fastlane pipeline, publisher SDK integrations (ABI, Homa).</li>
+          <li>Built playable-ad tooling for UA creatives and introduced AI-assisted development (Claude Code / Cursor + Unity MCP) into the team workflow.</li>
+        </ul>
+        <ul lang="vi">
+          <li>Lead phát triển toàn bộ danh mục game của studio: 12 game trên Google Play, 350K+ lượt tải, trong đó 3 game vượt 100K.</li>
+          <li>Đặt định hướng kỹ thuật, quy ước code và review code cho team; trực tiếp chỉ đạo từng dự án từ prototype tới khi lên store.</li>
+          <li>Xây stack dùng chung của studio — framework GameUp Core, GameUp/Gounldyu SDK, module IAP — rút ngắn setup dự án mới còn một installer một nút.</li>
+          <li>Phụ trách release: nâng target API Android, ký AAB, pipeline iOS bằng fastlane, tích hợp SDK publisher (ABI, Homa).</li>
+          <li>Xây tool playable ads cho creative UA và đưa phát triển có AI hỗ trợ (Claude Code / Cursor + Unity MCP) vào quy trình team.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer id="contact">
+  <div class="wrap">
+    <h2 lang="en">Let's talk</h2><h2 lang="vi">Liên hệ</h2>
+    <p class="sub" lang="en">Open to Lead / Senior Unity roles — on-site or remote.</p>
+    <p class="sub" lang="vi">Sẵn sàng cho vị trí Lead / Senior Unity — onsite hoặc remote.</p>
+    <div class="contact">
+      <a class="btn p" href="mailto:luongduy070211@gmail.com">✉ luongduy070211@gmail.com</a>
+      <a class="btn" href="https://github.com/gounldyu119" target="_blank" rel="noopener">GitHub · gounldyu119 ↗</a>
+    </div>
+    <p class="meta" style="margin-top:32px">© 2026 DuyLV</p>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var body=document.body, root=document.documentElement;
+  function get(k){try{return localStorage.getItem(k)}catch(e){return null}}
+  function set(k,v){try{localStorage.setItem(k,v)}catch(e){}}
+  var lang=get('lang')||((navigator.language||'').toLowerCase().indexOf('vi')===0?'vi':'en');
+  function applyLang(l){body.setAttribute('data-lang',l);root.lang=l;document.getElementById('langBtn').textContent=l==='en'?'VI':'EN'}
+  applyLang(lang);
+  document.getElementById('langBtn').onclick=function(){lang=lang==='en'?'vi':'en';applyLang(lang);set('lang',lang)};
+  var theme=get('theme'); if(theme) root.setAttribute('data-theme',theme);
+  document.getElementById('themeBtn').onclick=function(){
+    var cur=root.getAttribute('data-theme')||(matchMedia('(prefers-color-scheme: light)').matches?'light':'dark');
+    var next=cur==='light'?'dark':'light'; root.setAttribute('data-theme',next); set('theme',next);
+  };
+})();
+</script>
+</body>
+</html>
